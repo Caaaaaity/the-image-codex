@@ -1,0 +1,32 @@
+{
+  "document_id": "IC-REG-001",
+  "title": "Official Namespace Registry",
+  "version": "1.0",
+  "status": "Reviewed Working Draft",
+  "records": [
+    {
+      "identifier": "core",
+      "definition": "Official core language namespace"
+    },
+    {
+      "identifier": "sem",
+      "definition": "Official semantic namespace"
+    },
+    {
+      "identifier": "brain",
+      "definition": "Codex Brain execution namespace"
+    },
+    {
+      "identifier": "reg",
+      "definition": "Official registry namespace"
+    },
+    {
+      "identifier": "ext",
+      "definition": "Official extension namespace"
+    },
+    {
+      "identifier": "usr",
+      "definition": "Reserved user extension prefix"
+    }
+  ]
+}

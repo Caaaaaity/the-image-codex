@@ -1,0 +1,36 @@
+{
+  "document_id": "IC-REG-002",
+  "title": "Official Object Registry",
+  "version": "1.0",
+  "status": "Reviewed Working Draft",
+  "records": [
+    {
+      "identifier": "object.visual_entity",
+      "definition": "Base visual entity"
+    },
+    {
+      "identifier": "object.scene",
+      "definition": "Scene or image world"
+    },
+    {
+      "identifier": "object.subject",
+      "definition": "Primary subject"
+    },
+    {
+      "identifier": "object.environment",
+      "definition": "Environment or setting"
+    },
+    {
+      "identifier": "object.material",
+      "definition": "Material concept"
+    },
+    {
+      "identifier": "object.light_source",
+      "definition": "Lighting source"
+    },
+    {
+      "identifier": "object.camera",
+      "definition": "Camera or viewpoint object"
+    }
+  ]
+}

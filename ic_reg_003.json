@@ -1,0 +1,36 @@
+{
+  "document_id": "IC-REG-003",
+  "title": "Official Attribute Registry",
+  "version": "1.0",
+  "status": "Reviewed Working Draft",
+  "records": [
+    {
+      "identifier": "attr.color",
+      "definition": "Color property"
+    },
+    {
+      "identifier": "attr.scale",
+      "definition": "Scale or size property"
+    },
+    {
+      "identifier": "attr.position",
+      "definition": "Position property"
+    },
+    {
+      "identifier": "attr.material",
+      "definition": "Material assignment"
+    },
+    {
+      "identifier": "attr.quantity",
+      "definition": "Quantity/count"
+    },
+    {
+      "identifier": "attr.opacity",
+      "definition": "Transparency/opacity"
+    },
+    {
+      "identifier": "attr.texture",
+      "definition": "Surface texture"
+    }
+  ]
+}

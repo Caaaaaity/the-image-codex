@@ -1,0 +1,32 @@
+{
+  "document_id": "IC-REG-006",
+  "title": "Official Identifier Registry",
+  "version": "1.0",
+  "status": "Reviewed Working Draft",
+  "records": [
+    {
+      "identifier": "ic.con.001",
+      "definition": "Constitution document identifier"
+    },
+    {
+      "identifier": "ic.adr.001-005",
+      "definition": "Architectural Decision Record range"
+    },
+    {
+      "identifier": "ic.vls.001",
+      "definition": "Visual Language Standard"
+    },
+    {
+      "identifier": "ic.sem.001",
+      "definition": "Semantic Standard"
+    },
+    {
+      "identifier": "ic.cbs.001",
+      "definition": "Codex Brain Specification"
+    },
+    {
+      "identifier": "ic.arc.001",
+      "definition": "Reference Architecture"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "document_id": "IC-REG-005",
+  "title": "Official Relationship Registry",
+  "version": "1.0",
+  "status": "Reviewed Working Draft",
+  "records": [
+    {
+      "identifier": "rel.contains",
+      "definition": "Containment relationship"
+    },
+    {
+      "identifier": "rel.adjacent_to",
+      "definition": "Adjacency relationship"
+    },
+    {
+      "identifier": "rel.above",
+      "definition": "Above relationship"
+    },
+    {
+      "identifier": "rel.below",
+      "definition": "Below relationship"
+    },
+    {
+      "identifier": "rel.inside",
+      "definition": "Inside relationship"
+    },
+    {
+      "identifier": "rel.overlaps",
+      "definition": "Overlap relationship"
+    },
+    {
+      "identifier": "rel.supports",
+      "definition": "Support relationship"
+    }
+  ]
+}

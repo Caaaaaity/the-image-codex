@@ -1,0 +1,32 @@
+{
+  "document_id": "IC-REG-004",
+  "title": "Official Modifier Registry",
+  "version": "1.0",
+  "status": "Reviewed Working Draft",
+  "records": [
+    {
+      "identifier": "mod.intensity",
+      "definition": "Intensity adjustment"
+    },
+    {
+      "identifier": "mod.orientation",
+      "definition": "Orientation adjustment"
+    },
+    {
+      "identifier": "mod.style",
+      "definition": "Style qualifier"
+    },
+    {
+      "identifier": "mod.temporal",
+      "definition": "Time/state qualifier"
+    },
+    {
+      "identifier": "mod.environmental",
+      "definition": "Environmental qualifier"
+    },
+    {
+      "identifier": "mod.quality",
+      "definition": "Quality or fidelity qualifier"
+    }
+  ]
+}
