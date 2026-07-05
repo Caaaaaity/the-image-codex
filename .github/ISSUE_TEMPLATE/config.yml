@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 General Questions
+    url: https://github.com/Caaaaaity/the-image-codex/discussions
+    about: Ask general questions or discuss Image Codex concepts in Discussions
+  - name: 📚 Documentation
+    url: https://github.com/Caaaaaity/the-image-codex/blob/main/README.md
+    about: Start with the README and contributing guidelines
+  - name: 📖 Constitution
+    url: https://github.com/Caaaaaity/the-image-codex/blob/main/IC-CON-001_Image_Codex_Constitution_v1.0_Official_Edition.docx
+    about: Read the Constitution for foundational principles

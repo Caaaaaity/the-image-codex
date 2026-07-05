@@ -1,0 +1,56 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-*
+.history/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+
+# Temporary Office Files
+~$*.xlsx
+~$*.docx
+~$*.pptx
+*.tmp
+*.bak
+
+# Build artifacts
+*.o
+*.a
+*.out
+*.exe
+*.dll
+*.so
+
+# Node (if used)
+node_modules/
+npm-debug.log
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
