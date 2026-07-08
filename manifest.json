@@ -1,0 +1,247 @@
+{
+  "documents": [
+    {
+      "document_id": "IC-ADR-001",
+      "title": "The Image Codex Is a Visual Language Standard",
+      "version": "1.0",
+      "status": "Official Edition",
+      "file": "IC-ADR-001_v1.0_Official_Edition.docx",
+      "document_class": "architecture_decision_record",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-ADR-002",
+      "title": "Adoption of a Layered Standards Architecture",
+      "version": "1.0",
+      "status": "Official Edition",
+      "file": "IC-ADR-002_v1.0_Official_Edition.docx",
+      "document_class": "architecture_decision_record",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-ADR-003",
+      "title": "Adoption of an Object-Oriented Language Architecture",
+      "version": "1.0",
+      "status": "Official Edition",
+      "file": "IC-ADR-003_v1.0_Official_Edition_MATCHED.docx",
+      "document_class": "architecture_decision_record",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-ADR-004",
+      "title": "Adoption of a Knowledge Graph Architecture",
+      "version": "1.0",
+      "status": "Official Edition",
+      "file": "IC-ADR-004_v1.0_Official_Edition_MATCHED.docx",
+      "document_class": "architecture_decision_record",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-ADR-005",
+      "title": "Adoption of the Image Codex Structural Model",
+      "version": "1.0",
+      "status": "Official Edition",
+      "file": "IC-ADR-005_v1.0_Official_Edition.docx",
+      "document_class": "architecture_decision_record",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-ARC-001",
+      "title": "Reference Architecture",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-ARC-001_Reference_Architecture_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "reference_architecture",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-CBS-001",
+      "title": "Codex Brain Specification",
+      "version": "1.0",
+      "status": "Official Working Draft",
+      "file": "IC-CBS-001_Codex_Brain_Specification_v1.0_Official_Working_Draft.docx",
+      "document_class": "codex_brain_specification",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-CMP-001",
+      "title": "Compatibility Specification",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-CMP-001_Compatibility_Specification_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "compatibility_specification",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-CON-001",
+      "title": "Image Codex Constitution",
+      "version": "1.0",
+      "status": "Official Edition",
+      "file": "IC-CON-001_Image_Codex_Constitution_v1.0_Official_Edition.docx",
+      "document_class": "governance",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-GOV-001",
+      "title": "Governance Specification",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-GOV-001_Governance_Specification_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "governance_specification",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-PAR-001",
+      "title": "Parser Specification",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-PAR-001_Parser_Specification_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "parser_specification",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-PSG-001",
+      "title": "Publication Style Guide",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-PSG-001_Publication_Style_Guide_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "publication_style_guide",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-REG-001",
+      "title": "Official Namespace Registry",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-REG-001_Official_Namespace_Registry_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "registry",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "machine_readable_artifacts": [
+        {
+          "file": "ic_reg_001.json",
+          "format": "application/json"
+        }
+      ]
+    },
+    {
+      "document_id": "IC-REG-002",
+      "title": "Official Object Registry",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-REG-002_Official_Object_Registry_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "registry",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "machine_readable_artifacts": [
+        {
+          "file": "ic_reg_002.json",
+          "format": "application/json"
+        }
+      ]
+    },
+    {
+      "document_id": "IC-REG-003",
+      "title": "Official Attribute Registry",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-REG-003_Official_Attribute_Registry_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "registry",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "machine_readable_artifacts": [
+        {
+          "file": "ic_reg_003.json",
+          "format": "application/json"
+        }
+      ]
+    },
+    {
+      "document_id": "IC-REG-004",
+      "title": "Official Modifier Registry",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-REG-004_Official_Modifier_Registry_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "registry",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "machine_readable_artifacts": [
+        {
+          "file": "ic_reg_004.json",
+          "format": "application/json"
+        }
+      ]
+    },
+    {
+      "document_id": "IC-REG-005",
+      "title": "Official Relationship Registry",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-REG-005_Official_Relationship_Registry_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "registry",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "machine_readable_artifacts": [
+        {
+          "file": "ic_reg_005.json",
+          "format": "application/json"
+        }
+      ]
+    },
+    {
+      "document_id": "IC-REG-006",
+      "title": "Official Identifier Registry",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-REG-006_Official_Identifier_Registry_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "registry",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "machine_readable_artifacts": [
+        {
+          "file": "ic_reg_006.json",
+          "format": "application/json"
+        }
+      ]
+    },
+    {
+      "document_id": "IC-SEM-001",
+      "title": "Semantic Standard",
+      "version": "1.0",
+      "status": "Official Working Draft",
+      "file": "IC-SEM-001_Semantic_Standard_v1.0_Official_Working_Draft.docx",
+      "document_class": "semantic_standard",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-SER-001",
+      "title": "Serialization Specification",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-SER-001_Serialization_Specification_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "serialization_specification",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-TRN-001",
+      "title": "Translation Specification",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-TRN-001_Translation_Specification_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "translation_specification",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-VAL-001",
+      "title": "Validator Specification",
+      "version": "1.0",
+      "status": "Reviewed Working Draft",
+      "file": "IC-VAL-001_Validator_Specification_v1.0_Reviewed_Working_Draft.docx",
+      "document_class": "validator_specification",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "document_id": "IC-VLS-001",
+      "title": "Visual Language Standard",
+      "version": "1.0",
+      "status": "Official Working Draft",
+      "file": "IC-VLS-001_Visual_Language_Standard_v1.0_Official_Working_Draft.docx",
+      "document_class": "visual_language_standard",
+      "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    }
+  ]
+}
