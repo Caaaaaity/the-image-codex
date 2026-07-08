@@ -1,0 +1,59 @@
+name: Validate registries
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-registries:
+    name: Validate registry JSON files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate registry documents
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          required_keys = ("document_id", "title", "version", "status", "records")
+          registry_files = [Path(f"ic_reg_{index:03}.json") for index in range(1, 7)]
+          errors = []
+
+          for registry_file in registry_files:
+              if not registry_file.is_file():
+                  errors.append(f"Missing required registry file: {registry_file}")
+                  continue
+
+              try:
+                  with registry_file.open(encoding="utf-8") as handle:
+                      data = json.load(handle)
+              except json.JSONDecodeError as exc:
+                  errors.append(f"Invalid JSON in {registry_file}: line {exc.lineno}, column {exc.colno}: {exc.msg}")
+                  continue
+
+              for key in required_keys:
+                  if key not in data:
+                      errors.append(f"Missing required key '{key}' in {registry_file}")
+
+              if "records" in data and not isinstance(data["records"], list):
+                  errors.append(f"Key 'records' must be a list in {registry_file}")
+
+          if errors:
+              print("Registry validation failed:", file=sys.stderr)
+              for error in errors:
+                  print(f"- {error}", file=sys.stderr)
+              sys.exit(1)
+
+          print("Registry validation passed for ic_reg_001.json through ic_reg_006.json.")
+          PY
