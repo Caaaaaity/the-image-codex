@@ -11,16 +11,16 @@ Constitution
 └── ADR-001 through ADR-005
     ├── IC-VLS-001 Visual Language Standard
     ├── IC-SEM-001 Semantic Standard
-    └── IC-CBS-001 Codex Brain Specification
-        ├── IC-PAR-001 Parser Specification
-        ├── IC-VAL-001 Validator Specification
-        ├── IC-SER-001 Serialization Specification
-        ├── IC-TRN-001 Translation Specification
-        ├── IC-CMP-001 Compatibility Specification
-        ├── IC-ARC-001 Reference Architecture
-        ├── IC-GOV-001 Governance Specification
-        ├── IC-PSG-001 Publication Style Guide
-        └── IC-REG-001 through IC-REG-006 Registries
+    ├── IC-CBS-001 Codex Brain Specification
+    ├── IC-PAR-001 Parser Specification
+    ├── IC-VAL-001 Validator Specification
+    ├── IC-SER-001 Serialization Specification
+    ├── IC-TRN-001 Translation Specification
+    ├── IC-CMP-001 Compatibility Specification
+    ├── IC-ARC-001 Reference Architecture
+    ├── IC-GOV-001 Governance Specification
+    ├── IC-PSG-001 Publication Style Guide
+    └── IC-REG-001 through IC-REG-006 Registries
 ```
 
 ## Primary Dependencies
@@ -36,10 +36,10 @@ Constitution
 | IC-VLS-001 | Constitution, ADRs, registries | Defines structure and grammar boundaries |
 | IC-SEM-001 | Constitution, ADRs, registries | Defines canonical semantic meaning boundaries |
 | IC-CBS-001 | Constitution, IC-VLS-001, IC-SEM-001, parser, validator, registries | Defines post-validation interpretation and execution boundaries |
-| IC-PAR-001 | IC-VLS-001 | Depends on formal grammar and syntax completion |
-| IC-VAL-001 | IC-VLS-001, IC-SEM-001, registries | Depends on grammar, semantic rules, registry identifiers, and error requirements |
-| IC-SER-001 | IC-VLS-001, registries | Depends on canonical structure and metadata requirements |
-| IC-TRN-001 | IC-SEM-001, IC-CBS-001, compatibility rules | Depends on resolved semantics and execution plans |
+| IC-PAR-001 | IC-VLS-001, IC-SER-001 | Depends on formal grammar, syntax completion, and canonical serialization boundaries |
+| IC-VAL-001 | IC-VLS-001, IC-SEM-001, IC-SER-001, registries | Depends on grammar, semantic rules, serialization boundaries, registry identifiers, and error requirements |
+| IC-SER-001 | IC-VLS-001, registry-defined identifiers | Depends on canonical structure, identifiers, and metadata requirements |
+| IC-TRN-001 | IC-SEM-001, compatibility rules, IC-CBS-001 where execution behavior is required | Depends on resolved semantics, compatibility rules, and execution plans only when applicable |
 | IC-CMP-001 | Constitution, governance, registries | Depends on versioning and compatibility policy |
 | IC-ARC-001 | Core standards and implementation standards | Describes component interaction without redefining their behavior |
 | IC-GOV-001 | Constitution | Defines repository and standards evolution process |
