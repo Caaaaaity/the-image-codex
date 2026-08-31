@@ -1,0 +1,37 @@
+{
+"$schema": "http://json-schema.org/draft-07/schema#"
+"title": "Image Codex Registry Entry",
+"description": "Validation schema for official Image Codex
+registry entries",
+"type": "object",
+"required": ["id", "name", "type", "version"],
+"properties": {
+"id": {
+"type": "string",
+"pattern": "^IC-[A-Z]{3}-[0-91{3}$",
+"description": "Unique identifier following the IC-XXX-000
+format"
+},
+"name": {
+"type": "string",
+"description": "Human-readable name of the entry"
+},
+"type": {
+"type": "string",
+"enum": ["OBJECT", "ATTRIBUTE", "MODIFIER", "RELATIONSHIP",
+"IDENTIFIER"],
+"description": "The category of the registry entry"
+},
+"version": {
+"type": "string",
+"pattern": "^[0-91+\1.[0-9]+11.[0-9]+$",
+"description": "Semantic versioning (e.g., 1.0.0)"
+},
+"description": {
+"type": "string"
+},
+"metadata": {
+"type": "object"
+}
+}
+}
