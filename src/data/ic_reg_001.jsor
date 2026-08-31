@@ -1,0 +1,42 @@
+[
+{
+"id": "IC-OBJ-001",
+"name": "Humanoid Figure",
+"type": "OBJECT",
+"version": "1.0.0",
+"description": "A standard human-like entity used as a primary subject."
+},
+{
+"id": "IC-OBJ-002",
+"name": "Cybernetic Construct"
+"type": "OBJECT",
+"version": "1.0.0",
+"description": "An entity composed of both biological and mechanical parts."
+"id": "IC-ENV-001",
+"name": "Ethereal Forest",
+"type": "OBJECT",
+"version": "1.0.0",
+"description": "A dense woodland environment with bioluminescent flora."
+},
+{
+"id": "IC-ENV-002",
+"name": "Neon Megacity",
+"type": "OBJECT",
+"version": "1.0.0",
+"description": "A high-density urban environment with vibrant light saturation."
+},
+{
+"id": "IC-LGT-001",
+"name": "Cinematic Rim Lighting",
+"type": "ATTRIBUTE",
+"version": "1.0.0",
+"description": "A lighting style that creates a bright outline around the subject."
+},
+{
+"id": "IC-LGT-002",
+"name": "Volumetric Fog"
+"type": "ATTRIBUTE",
+"version": "1.0.0",
+"description": "Visible light rays passing through atmospheric particles."
+}
+]
