@@ -1,0 +1,23 @@
+name: Validate Image Codex Registries
+on:
+push:
+branches: [ main ]
+pull_request:
+branches: [ main ]
+jobs:
+validate:
+runs-on: ubuntu-latest
+steps:
+- uses:
+actions/checkout@v3
+- name: Setup Node. js
+uses: actions/setup-node@v3 with:
+node-version: '18'
+- name: Install Validation Tools
+run: npm install ajv-cli
+- name: Run Schema Validation run:
+# Validates all JSON files in the root against the
+official schema
+for file in ic_reg_*.json; do if [ -f "$file" ]; then npx ajv validate -s
+src/schemas/registry.schema.json -d "$file"
+fi done
