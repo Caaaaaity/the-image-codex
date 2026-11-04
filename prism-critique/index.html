@@ -205,6 +205,12 @@ init().catch(e=>{handleError(e);renderRubric();renderChecks();renderAll();view('
     .ai-grade-badges span{font-size:11px;font-weight:800;padding:6px 9px;border-radius:18px;background:#f0e7ff;color:#5e378c}
     .ai-manual-toggle{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:#65546f;margin:12px 0}
     .ai-manual-toggle input{accent-color:#a23ca0}
+    #technicalChecks select,#technicalChecks input[data-checknote]{display:none}
+    .ai-showmanual #technicalChecks select,.ai-showmanual #technicalChecks input[data-checknote]{display:block}
+    .ai-check-info{font-size:12px;line-height:1.6;padding-top:8px;color:#61516e}
+    .ai-check-info b{font-size:11px;border-radius:20px;padding:4px 8px;background:#eee7f8;color:#5f378b}
+    .ai-check-info b.need{color:#ab3d47;background:#fff0f2}
+    .ai-check-info b.pass{color:#286b5e;background:#e6f9f4}
     @media(max-width:600px){.ai-console{margin:12px 0;padding:13px}}
   </style>`;
   function status(msg, kind=''){
@@ -297,6 +303,19 @@ init().catch(e=>{handleError(e);renderRubric();renderChecks();renderAll();view('
       if(d.innerHTML!==newContent)d.innerHTML=newContent;
     });
   }
+  function enrichChecks(){
+    const host=$('technicalChecks');if(!host||!host.children.length)return;
+    const st=api().getState();
+    [...host.children].forEach((box,i)=>{
+      const c=st.checks[i];if(!c)return;
+      let d=box.querySelector('.ai-check-info');
+      if(!d){d=document.createElement('div');d.className='ai-check-info';box.append(d)}
+      const label=c.status||'Not assessed';
+      const cls=label==='Needs work'?'need':label==='Pass'?'pass':'';
+      const markup='<b class="'+cls+'">'+escapeHTML(label)+'</b> <span>'+escapeHTML(c.note||'Awaiting AI analysis')+'</span>';
+      if(d.innerHTML!==markup)d.innerHTML=markup;
+    });
+  }
   function drawSummary(){
     const st=api().getState(),ai=st.aiEvaluation;
     const el=$('aiFindings'); if(!el)return;
@@ -346,19 +365,21 @@ init().catch(e=>{handleError(e);renderRubric();renderChecks();renderAll();view('
     const findings=document.createElement('div');findings.id='aiFindings';findings.className='panel ai-results';
     $('dashboard').prepend(findings);
     const roadmap=$('roadmap');roadmap.querySelector('p.sub')?.replaceChildren(document.createTextNode('AI-generated evidence and corrective actions, sorted by impact. Run Analyze Image from the upload panel first.'));
+    $('technicalChecks').closest('.panel')?.querySelector('p.sub')?.replaceChildren(document.createTextNode('AI assesses these nine technical checks wherever the image provides sufficient evidence. Unverifiable production properties stay Not assessed. Manual corrections are optional.'));
     const rubricObserver=new MutationObserver(()=>enrichRubric());rubricObserver.observe($('rubricGrid'),{childList:true});
+    const checksObserver=new MutationObserver(()=>enrichChecks());checksObserver.observe($('technicalChecks'),{childList:true});
     $('aiConnection').open=false;
     // Respond to state changes without altering the original save/export handlers.
     const originalLoad=api().loadState;
-    api().loadState=(...args)=>{const r=originalLoad(...args);drawSummary();enrichRubric();return r};
+    api().loadState=(...args)=>{const r=originalLoad(...args);drawSummary();enrichRubric();enrichChecks();return r};
     const originalRender=api().renderAll;
-    api().renderAll=(...args)=>{const r=originalRender(...args);drawSummary();enrichRubric();return r};
-    document.querySelectorAll('a[data-nav]').forEach(link=>link.addEventListener('click',()=>{setTimeout(()=>{drawSummary();enrichRubric()},0)}));
+    api().renderAll=(...args)=>{const r=originalRender(...args);drawSummary();enrichRubric();enrichChecks();return r};
+    document.querySelectorAll('a[data-nav]').forEach(link=>link.addEventListener('click',()=>{setTimeout(()=>{drawSummary();enrichRubric();enrichChecks()},0)}));
     // Existing core capture/import flows call their own loadState; keep the AI panel synced via targeted interactions.
-    document.getElementById('historyList')?.addEventListener('click',()=>setTimeout(()=>{drawSummary();enrichRubric()},50));
-    document.getElementById('jsonFile')?.addEventListener('change',()=>setTimeout(()=>{drawSummary();enrichRubric()},250));
+    document.getElementById('historyList')?.addEventListener('click',()=>setTimeout(()=>{drawSummary();enrichRubric();enrichChecks()},50));
+    document.getElementById('jsonFile')?.addEventListener('change',()=>setTimeout(()=>{drawSummary();enrichRubric();enrichChecks()},250));
     $('aiConnection').addEventListener('toggle',()=>{});
-    drawSummary();enrichRubric();
+    drawSummary();enrichRubric();enrichChecks();
     if(validUrl(endpoint())&&passcode())status('AI service configured. Upload an image and tap Analyze Image.','success');
     // Public test bridge to verify the AI workflows with mocked backend responses.
     window.PRISM_AI_TEST={runAnalyze,testConnection,drawSummary,endpoint};
