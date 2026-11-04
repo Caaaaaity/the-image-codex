@@ -258,7 +258,7 @@ init().catch(e=>{handleError(e);renderRubric();renderChecks();renderAll();view('
         updated.checks[i]={status: known.includes(c.status)?c.status:'Not assessed',note:String(c.evidence||'').trim()};
       });
       updated.promptOverride=String(analysis.improvement_prompt||'').trim()||null;
-      updated.aiEvaluation={model:data.model||'AI vision',overview:analysis.overview||'',strengths:analysis.strengths||[],priorities:analysis.priorities||[],analyzedAt:new Date().toISOString(),source:'API image analysis'};
+      updated.aiEvaluation={imageSignature:signature(st.image),model:data.model||'AI vision',overview:analysis.overview||'',strengths:analysis.strengths||[],priorities:analysis.priorities||[],analyzedAt:new Date().toISOString(),source:'API image analysis'};
       updated.updatedAt=new Date().toISOString();
       api().loadState(updated);
       drawSummary();
@@ -273,6 +273,7 @@ init().catch(e=>{handleError(e);renderRubric();renderChecks();renderAll();view('
       status(msg,'failed');
     } finally{analyzing=false;$('aiAnalyze').disabled=false;$('aiAnalyze').textContent='✦ Analyze Image with AI';}
   }
+  function signature(data){return String(data?.length||0)+':'+String(data||'').slice(-120)}
   function strictScore(n){if(typeof n!=='number'||!Number.isFinite(n)||n<0||n>100)throw new Error('AI returned an invalid category score.');return Math.round(n)}
   async function testConnection(){
     try {checkConfiguration();status('Testing secure backend connection…');
@@ -322,6 +323,22 @@ init().catch(e=>{handleError(e);renderRubric();renderChecks();renderAll();view('
       status('Disconnected. Connect your secure AI service to resume analysis.');
     });
     $('aiAnalyze').addEventListener('click',runAnalyze);
+    // Clear scores when an image is replaced or removed; never attach old grades to new artwork.
+    function invalidateOldImageReview(){
+      const st=api().getState();
+      if(!st.aiEvaluation)return;
+      if(st.aiEvaluation.imageSignature===signature(st.image))return;
+      st.id=null;
+      st.criteria=st.criteria.map(()=>({applicable:true,pro:null,creative:null,note:''}));
+      st.checks=st.checks.map(()=>({status:'Not assessed',note:''}));
+      st.promptOverride=null;
+      st.aiEvaluation=null;
+      api().loadState(st);
+      status(st.image?'New image loaded. Tap Analyze Image to evaluate this version.':'Image removed. Upload an artwork to analyze.');
+    }
+    const previewObserver=new MutationObserver(()=>invalidateOldImageReview());
+    previewObserver.observe($('preview'),{attributes:true,attributeFilter:['src']});
+    $('removeImage').addEventListener('click',()=>setTimeout(invalidateOldImageReview,0));
     $('rubricGrid').closest('.panel')?.querySelector('p.sub')?.replaceChildren(document.createTextNode('AI scores appear automatically after image analysis. N/A categories are excluded from the score. Optional manual adjustments are hidden by default.'));
     const toggle=document.createElement('label');toggle.className='ai-manual-toggle';toggle.innerHTML='<input type="checkbox" id="aiManualToggle"> Optional: allow manual score corrections';
     $('rubricGrid').before(toggle);
