@@ -3,5 +3,5 @@ main = "index.mjs"
 compatibility_date = "2026-11-04"
 
 [vars]
-OPENAI_MODEL = "gpt-4.1"
+OPENAI_MODEL = "gpt-6.1-sol"
 ALLOWED_ORIGINS = "https://raw.githack.com,https://caaaaaity.github.io,http://localhost:8000,http://127.0.0.1:8000"
